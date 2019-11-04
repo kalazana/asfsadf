@@ -109,6 +109,11 @@ public class Buch extends Medium {
         return stringBuilder.toString();
     }
 
+    @Override
+    public void validate() {
+        // TODO
+    }
+
     /**
      * Prüft eine ISBN auf Gültigkeit
      * @return true für gültig, false für ungültig

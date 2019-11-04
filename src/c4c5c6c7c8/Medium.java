@@ -24,4 +24,6 @@ public abstract class Medium {
      * @return Text-Repräsentation des Mediums
      */
     public abstract String calculateRepresentation();
+
+    public abstract void validate();
 }

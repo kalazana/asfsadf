@@ -83,4 +83,9 @@ public class Zeitschrift extends Medium {
 
         return stringBuilder.toString();
     }
+
+    @Override
+    public void validate() {
+        // TODO
+    }
 }

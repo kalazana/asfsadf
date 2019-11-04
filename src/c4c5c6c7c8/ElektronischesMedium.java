@@ -46,6 +46,11 @@ public class ElektronischesMedium extends Medium {
         return stringBuilder.toString();
     }
 
+    @Override
+    public void validate() {
+        // TODO
+    }
+
     /**
      * Prüft eine URL auf Gültigkeit
      * @param urlString URL als String
