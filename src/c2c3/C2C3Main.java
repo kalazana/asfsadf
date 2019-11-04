@@ -1,6 +1,6 @@
-package c2;
+package c2c3;
 
-public class C2Main {
+public class C2C3Main {
     public static void main(String[] args) {
         // create family having 2 children
         Family family1 = new Family("Hugo", "Erika");
@@ -56,6 +56,11 @@ public class C2Main {
             family4.addChild(null);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+
+        // c3
+        for (String name : family1) {
+            System.out.println(name);
         }
     }
 }

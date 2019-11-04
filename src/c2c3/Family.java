@@ -1,8 +1,9 @@
-package c2;
+package c2c3;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class Family {
+public class Family implements Iterable<String> {
     private ArrayList<String> members = new ArrayList<>();
 
     public Family(String father, String mother) {
@@ -45,6 +46,11 @@ public class Family {
         if (name == null || name.trim().length() == 0) {
             throw new IllegalArgumentException("empty name not allowed");
         }
+    }
+
+    @Override
+    public Iterator<String> iterator() {
+        return members.iterator();
     }
 
     public enum Role {
