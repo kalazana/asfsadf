@@ -1,0 +1,7 @@
+Informationen Nachschlagen - innerhalb der IDE (IntelliJ) (z.B. zu JavaDocs): STRG gedrückt halten und z.B. auf Klasse oder Methode klicken
+Informationen nachschlagen - generell: In der Java Sprachreferenz (möglichst in der Version der verwendeten Java-Instanz)
+
+Für Java 13 z.B: https://docs.oracle.com/javase/specs/jls/se13/html/index.html
+
+Packages mit eigenen Worten:
+Java-Klassen werden normalerweise in Packages abgelegt. Durch Packages kann eine moduliere Strukturierung des Quellcodes erreicht werden. Außerdem kann man seinen Quellcode so vom Quellcode anderer Entwickler trennen und eindeutig machen. In der Regel werden Packages unter der Domain eines Unternehmens/Entwicklers angelegt. Dabei sollte die Domain der Website des Unternehmens umgedreht werden. Darunter werden dann weitere Unter-Packages für Abteilungen oder direkt für einzelne Apps angelegt. (z.B. eine App namens "Test" von Google [google.com] wäre dies com.google.test). Einzelne Klassen werden dann innerhalb dieses Packages angelegt. Bei größeren Anwendungen ist es sinnvoll, weitere Unter-Packages anzulegen. Packages ermöglichen außerdem die Wiederverwendung von Quellcode. So kann z.B. Google Code, der in mehreren Anwendungen verwendet wird, unter einem separaten Package organisieren, dieser kann dann in den jeweiligen Anwendungen verwendet werden. Das Keyword "package" am Anfang einer Java-Datei definiert, zu welchem Package die Klasse in dieser Datei gehört.

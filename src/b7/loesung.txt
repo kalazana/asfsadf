@@ -1,0 +1,26 @@
+DEC     HEX     Wertebereich    Bedeutung Bereich                           Bedeutung hier
+
+ 68     44      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "D"
+105     69      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "i"
+101     65      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "e"
+ 32     20      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol Space
+ 87     57      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "W"
+101     65      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "e"
+108     6C      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "l"
+116     74      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "t"
+ 32     20      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol Space
+107     6B      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "k"
+111     6F      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "o"
+115     73      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "s"
+116     74      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "t"
+101     65      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "e"
+116     74      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "t"
+ 32     20      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol Space
+ 49     31      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "1"
+ 55     37      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol "7"
+ 32     20      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol Space
+226     E2      E0–EF           Start einer 3 Byte langen Sequenz           1. Byte des Symbols "€"
+130     82      80–BF           Zweites/Drittes/Viertes Byte einer Sequenz  2. Byte des Symbols "€"
+172     AC      80–BF           Zweites/Drittes/Viertes Byte einer Sequenz  3. Byte des Symbols "€"
+ 13     0D      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol Carriage Return
+ 10     0A      00–7F           1 Byte langes ASCII-Symbol                  ASCII-Symbol Line Feed

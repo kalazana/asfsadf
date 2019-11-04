@@ -1,0 +1,65 @@
+package a11;
+
+import java.util.Formatter;
+
+public class CD extends Medium {
+    private String label;
+    private String kuenstler;
+
+    /**
+     * Gibt den Künstler der CD zurück
+     * @return Künstler der CD
+     */
+    public String getKuenstler() {
+        return kuenstler;
+    }
+
+    /**
+     * Setzt den Künstler der CD
+     * @param kuenstler Künstler
+     */
+    public void setKuenstler(String kuenstler) {
+        this.kuenstler = kuenstler;
+    }
+
+    /**
+     * Gibt das Label der CD zurück
+     * @return Label der CD
+     */
+    public String getLabel() {
+        return label;
+    }
+
+    /**
+     * Setzt das Label der CD
+     * @param label Label
+     */
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    /**
+     * Gibt die Text-Repräsentation der CD zurück
+     * @return Text-Repräsentation der CD
+     * @see Medium#calculateRepresentation()
+     */
+    @Override
+    public String calculateRepresentation() {
+        StringBuilder stringBuilder = new StringBuilder();
+        Formatter formatter = new Formatter(stringBuilder);
+
+        // Titel
+        formatter.format("Titel: %s", this.getTitel());
+        stringBuilder.append(System.getProperty("line.separator"));
+
+        // Label
+        formatter.format("Label: %s", this.getLabel());
+        stringBuilder.append(System.getProperty("line.separator"));
+
+        // Künstler
+        formatter.format("Künstler: %s", this.getKuenstler());
+        stringBuilder.append(System.getProperty("line.separator"));
+
+        return stringBuilder.toString();
+    }
+}

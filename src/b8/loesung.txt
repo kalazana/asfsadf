@@ -1,0 +1,14 @@
+Ergebnis UTF-8 (zum Vergleich darunter die Ausgabe aus B6):
+
+68 105 101 32 87 101 108 116 32 107 111 115 116 101 116 32 49 55 32 226 130 172 10
+68 105 101 32 87 101 108 116 32 107 111 115 116 101 116 32 49 55 32 226 130 172 13 10
+
+Unterschied: das vorletzte Zeichen war in B6 ein Carriage Return, in B8 fehlt dieses Zeichen.
+Vermutlicher Grund: die verwendete IDE (IntelliJ) nutzt unter dem verwendeten Betriebssystem (macOS) nur das LF-Symbol zum Zeilenumbruch ("\n") anstelle der Kombination aus CR und LF ("\r\n")
+
+Ergebnis UTF-16 (zum Vergleich darunter die Ausgabe von oben mit UTF-8):
+254 255 0 68 0 105 0 101 0 32 0 87 0 101 0 108 0 116 0 32 0 107 0 111 0 115 0 116 0 101 0 116 0 32 0 49 0 55 0 32 32      172 0 10
+          68   105   101   32   87   101   108   116   32   107   111   115   116   101   116   32   49   55   32 226 130 172   10
+
+Erklärung: UTF-8 codiert in 8 Bit großen Blöcken, während UTF-16 in 16 Bit großen Blöcken codiert. So kommt es, dass jedes zweite Byte 0 ist, da.
+Auffällig sind aber die unterschiedlichen Anfänge und die unterschiedliche Codierung des Euro-Zeichens. UTF-16 benötigt hierfür nämlich nur 2 Bytes, während UTF-8 3 Bytes benötigt.

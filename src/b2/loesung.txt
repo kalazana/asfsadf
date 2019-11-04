@@ -1,0 +1,7 @@
+Werttyp: Speichert direkt den Wert einer Variable/Konstanten, Zuweisung kopiert Wert, Vergleich vergleicht Wert
+Verweistyp: Speichert nur den Verweis auf den Wert, Zuweisung kopiert Referenz und nicht Wert, Vergleich vergleicht Adresse der Werte
+
+Boxing: Ausdrückliche Behandlung eines Werttyps als Referenztyps
+z.B. wenn man primitive Datentypen in ein Objekt kapseln muss
+Unboxing: Ausdrückliche Behandlung eines Referenztyps als Werttyps
+z.B. wenn man ein Objekt in einen primiviten Datentypen umwandeln muss

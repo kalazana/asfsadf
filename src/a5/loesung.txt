@@ -1,0 +1,9 @@
+Im Gegensatz zu C und C++ muss man sich als Entwichler in Java nicht selbst um das Alloziieren unf Freigeben von Speicher kümmern.
+Hierfür hat Java den Garbage Collector, welcher als nebenläufiger Thread nicht mehr referenzierte Objekte erkennt und den durch diese Objekte blockierten Speicher freigibt.
+
+Der Java Garbage Collector testet regelmäßig, ob ein Objekt noch benötigt wird. Die genaue Funktionsweise unterscheidet sich von JVM zu JVM.
+Allgemeines Prinzip: Der Garbage Collector verwaltet die Wurzelobjekte und hat somit Zugriff auf jedes Unterobjekt.
+In Oracle JVM:
+    - Neue Objekte werden erstmal in einem speziellen Bereich angelegt, welcher sehr oft auf nicht mehr benötigte Objekte überprüft wird.
+    - Ab einer bestimmten Lebensdauer eines Objektes, wird dieses in einen anderen Bereich verschoben, wo seltener nach nicht mehr benötigten Objekten gesucht wird.
+    - Hintergrund ist, dass die meisten Objekte nur kurz benötigt werden und die übrigen Objekte meist eine besonders hohe Lebensdauer haben
