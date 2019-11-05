@@ -1,6 +1,6 @@
 package c4c5c6c7c8;
 
-public abstract class Medium {
+public abstract class Medium implements Comparable<Medium> {
     private String titel;
 
     /**
@@ -36,5 +36,10 @@ public abstract class Medium {
         protected ValidationException(String message) {
             super(message);
         }
+    }
+
+    @Override
+    public int compareTo(Medium o) {
+        return this.getTitel().compareTo(o.getTitel());
     }
 }

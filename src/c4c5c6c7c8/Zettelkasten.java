@@ -1,6 +1,7 @@
 package c4c5c6c7c8;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 
 // TODO: add javadoc
@@ -40,8 +41,25 @@ public class Zettelkasten implements Iterable<Medium> {
         return null;
     }
 
+    /**
+     * sorts the internal ArrayList by media title from a-z
+     * @param reversed if true, sorting will be done from z-a instead a-z
+     */
+    public void sort(boolean reversed) {
+        // A-Z
+        this.mediumArrayList.sort(Comparator.naturalOrder());
+
+        if (reversed) {
+            this.mediumArrayList.sort(Comparator.reverseOrder());
+        }
+    }
+
+
+    /**
+     * sorts the internal ArrayList by media title from a-z
+     */
     public void sort() {
-        // TODO
+        this.sort(false);
     }
 
     @Override
