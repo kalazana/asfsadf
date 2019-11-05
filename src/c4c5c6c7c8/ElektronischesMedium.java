@@ -47,8 +47,14 @@ public class ElektronischesMedium extends Medium {
     }
 
     @Override
-    public void validate() {
-        // TODO
+    public void validate() throws ValidationException {
+        // validate fields inherited from superclass
+        super.validate();
+
+        // validate field url
+        if (this.url == null || this.url.trim().equals("")) {
+            throw new ValidationException("empty url not allowed");
+        }
     }
 
     /**

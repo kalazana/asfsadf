@@ -4,8 +4,8 @@ import java.util.Formatter;
 
 public class Zeitschrift extends Medium {
     private String issn;
-    private int volume;
-    private int nummer;
+    private Integer volume;
+    private Integer nummer;
 
     /**
      * Gibt die Nummer der Zeitschrift zurück
@@ -85,7 +85,23 @@ public class Zeitschrift extends Medium {
     }
 
     @Override
-    public void validate() {
-        // TODO
+    public void validate() throws ValidationException {
+        // validate fields inherited from superclass
+        super.validate();
+
+        // validate field volume
+        if (this.volume == null) {
+            throw new ValidationException("volume cannot be null");
+        }
+
+        // validate field nummer
+        if (this.nummer == null) {
+            throw new ValidationException("nummer can't be null");
+        }
+
+        // validate field issn
+        if (this.issn == null || this.issn.trim().equals("")) {
+            throw new ValidationException("empty issn not allowed");
+        }
     }
 }

@@ -3,7 +3,7 @@ package c4c5c6c7c8;
 import java.util.Formatter;
 
 public class Buch extends Medium {
-    private int erscheinungsjahr;
+    private Integer erscheinungsjahr;
     private String verfasser;
     private String verlag;
     private String isbn;
@@ -110,8 +110,29 @@ public class Buch extends Medium {
     }
 
     @Override
-    public void validate() {
-        // TODO
+    public void validate() throws ValidationException {
+        // validate fields inherited from superclass
+        super.validate();
+
+        // validate field erscheinungsjahr
+        if (this.erscheinungsjahr == null) {
+            throw new ValidationException("erscheinungsjahr cannot be null");
+        }
+
+        // validate field isbn
+        if (this.isbn == null || this.isbn.trim().equals("")) {
+            throw new ValidationException("empty ISBN not allowed");
+        }
+
+        // validate field verfasser
+        if (this.verfasser == null || this.verfasser.trim().equals("")) {
+            throw new ValidationException("empty verfasser not allowed");
+        }
+
+        // validate field verlag
+        if (this.verlag == null || this.verlag.trim().equals("")) {
+            throw new ValidationException("empty verlag not allowed");
+        }
     }
 
     /**

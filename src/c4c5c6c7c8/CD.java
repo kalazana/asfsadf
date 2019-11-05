@@ -64,7 +64,18 @@ public class CD extends Medium {
     }
 
     @Override
-    public void validate() {
-        // TODO
+    public void validate() throws ValidationException {
+        // validate fields inherited from superclass
+        super.validate();
+
+        // validate field label
+        if (this.label == null || this.label.trim().equals("")) {
+            throw new ValidationException("empty label not allowed");
+        }
+
+        // validate kuenstler label
+        if (this.kuenstler == null || this.kuenstler.trim().equals("")) {
+            throw new ValidationException("empty kuenstler not allowed");
+        }
     }
 }

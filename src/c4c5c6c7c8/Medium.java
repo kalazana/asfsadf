@@ -25,5 +25,16 @@ public abstract class Medium {
      */
     public abstract String calculateRepresentation();
 
-    public abstract void validate();
+    public void validate() throws ValidationException {
+        // validate field titel
+        if (this.titel == null || this.titel.equals("")) {
+            throw new ValidationException("empty title not allowed");
+        }
+    };
+
+    public static class ValidationException extends Exception {
+        protected ValidationException(String message) {
+            super(message);
+        }
+    }
 }

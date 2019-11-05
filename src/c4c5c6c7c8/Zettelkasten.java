@@ -5,10 +5,10 @@ import java.util.Iterator;
 
 // TODO: add javadoc
 
-public class Zettelkasten implements Iterable {
+public class Zettelkasten implements Iterable<Medium> {
     private ArrayList<Medium> mediumArrayList = new ArrayList<>();
 
-    public void addMedium(Medium medium) {
+    public void addMedium(Medium medium) throws Medium.ValidationException {
         // check if all fields are valid
         medium.validate();
 
@@ -45,7 +45,7 @@ public class Zettelkasten implements Iterable {
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<Medium> iterator() {
         return mediumArrayList.iterator();
     }
 }
