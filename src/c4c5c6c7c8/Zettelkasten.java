@@ -17,28 +17,56 @@ public class Zettelkasten implements Iterable<Medium> {
         mediumArrayList.add(medium);
     }
 
-    public void dropMedium(String title) {
+    public void dropMedium(String title) throws DuplicateEntryException, EntryNotFoundException {
+        ArrayList<Medium> results = new ArrayList<>();
+
         // iterate through ArrayList and compare titles
         for (Medium medium : mediumArrayList) {
             if (medium.getTitel().equals(title)) {
-                // delete if media was found
-                mediumArrayList.remove(medium);
-                break;
+                // add medium to results list
+                results.add(medium);
             }
+        }
+
+        if (results.size() > 1) {
+            throw new DuplicateEntryException();
+        } else if (results.size() == 0) {
+            throw new EntryNotFoundException();
+        } else {
+            results.remove(results.get(0));
         }
     }
 
-    public Medium findMedium(String title) {
+    public void dropMedium(String title, int index) throws EntryNotFoundException {
+        if (index < 0) {
+            throw new IllegalArgumentException("index can't be lower than 0");
+        }
+
+        ArrayList<Medium> results = this.findMedium(title);
+
+        if (results.size() > index) {
+            mediumArrayList.remove(index);
+        }
+
+        throw new EntryNotFoundException();
+    }
+
+    public ArrayList<Medium> findMedium(String title) {
+        ArrayList<Medium> results = new ArrayList<>();
+
         // iterate through ArrayList and compare titles
         for (Medium medium : mediumArrayList) {
             if (medium.getTitel().equals(title)) {
-                // if found, return item
-                return medium;
+                // add medium to results list
+                results.add(medium);
             }
         }
 
-        // return null if media wasn't found
-        return null;
+        // order by type
+        results.sort(Comparator.comparing(a -> a.getClass().getCanonicalName()));
+
+        // return results
+        return results;
     }
 
     /**
@@ -65,5 +93,17 @@ public class Zettelkasten implements Iterable<Medium> {
     @Override
     public Iterator<Medium> iterator() {
         return mediumArrayList.iterator();
+    }
+
+    static class DuplicateEntryException extends Exception {
+        DuplicateEntryException() {
+            super();
+        }
+    }
+
+    static class EntryNotFoundException extends Exception {
+        EntryNotFoundException() {
+            super();
+        }
     }
 }
