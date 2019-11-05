@@ -27,19 +27,19 @@ public abstract class Medium implements Comparable<Medium> {
 
     public void validate() throws ValidationException {
         // validate field titel
-        if (this.titel == null || this.titel.equals("")) {
+        if (this.titel == null || this.titel.trim().equals("")) {
             throw new ValidationException("empty title not allowed");
         }
     };
 
-    public static class ValidationException extends Exception {
-        protected ValidationException(String message) {
-            super(message);
-        }
-    }
-
     @Override
     public int compareTo(Medium o) {
         return this.getTitel().compareTo(o.getTitel());
+    }
+
+    static class ValidationException extends Exception {
+        ValidationException(String message) {
+            super(message);
+        }
     }
 }
