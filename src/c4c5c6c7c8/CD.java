@@ -73,7 +73,7 @@ public class CD extends Medium {
             throw new ValidationException("empty label not allowed");
         }
 
-        // validate kuenstler label
+        // validate field kuenstler
         if (this.kuenstler == null || this.kuenstler.trim().equals("")) {
             throw new ValidationException("empty kuenstler not allowed");
         }
