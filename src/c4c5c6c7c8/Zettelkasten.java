@@ -7,6 +7,7 @@ import java.util.Iterator;
 // TODO: add javadoc
 
 public class Zettelkasten implements Iterable<Medium> {
+    private SortedState sorted = SortedState.NONE;
     private ArrayList<Medium> mediumArrayList = new ArrayList<>();
 
     public void addMedium(Medium medium) throws Medium.ValidationException {
@@ -15,6 +16,9 @@ public class Zettelkasten implements Iterable<Medium> {
 
         // add media to list
         mediumArrayList.add(medium);
+
+        // set sorted state to none
+        this.sorted = SortedState.NONE;
     }
 
     public void dropMedium(String title) throws DuplicateEntryException, EntryNotFoundException {
@@ -74,11 +78,14 @@ public class Zettelkasten implements Iterable<Medium> {
      * @param reversed if true, sorting will be done from z-a instead a-z
      */
     public void sort(boolean reversed) {
-        // A-Z
-        this.mediumArrayList.sort(Comparator.naturalOrder());
+        if (this.sorted == SortedState.NONE) {
+            this.mediumArrayList.sort(Comparator.naturalOrder());
+            this.sorted = SortedState.ASC;
+        }
 
-        if (reversed) {
+        if ((reversed && this.sorted != SortedState.DESC) || (!reversed && this.sorted != SortedState.ASC)) {
             this.mediumArrayList.sort(Comparator.reverseOrder());
+            this.sorted = SortedState.DESC;
         }
     }
 
@@ -105,5 +112,9 @@ public class Zettelkasten implements Iterable<Medium> {
         EntryNotFoundException() {
             super();
         }
+    }
+
+    static enum SortedState {
+        NONE, ASC, DESC;
     }
 }
