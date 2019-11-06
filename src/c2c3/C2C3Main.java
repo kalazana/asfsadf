@@ -62,5 +62,11 @@ public class C2C3Main {
         for (String name : family1) {
             System.out.println(name);
         }
+
+        /*
+        Wenn nicht vom Typ String sondern vom Typ eines speziellen Objekts, könnte man aber auf
+        die Methoden des jeweiligen Objekts zugreifen und dort z.B. ein setName("...") o.ä. aufrufen.
+        Dies wäre aber bei jeder anderen Implementierung genauso, die das Objekt zurückgibt (z.B. Getter-Methoden)
+         */
     }
 }
