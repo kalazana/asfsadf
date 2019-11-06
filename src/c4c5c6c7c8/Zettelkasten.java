@@ -10,6 +10,11 @@ public class Zettelkasten implements Iterable<Medium> {
     private SortedState sorted = SortedState.NONE;
     private ArrayList<Medium> mediumArrayList = new ArrayList<>();
 
+    /**
+     * add's a medium instance
+     * @param medium the Medium instance to add
+     * @throws Medium.ValidationException
+     */
     public void addMedium(Medium medium) throws Medium.ValidationException {
         // check if all fields are valid
         medium.validate();
@@ -21,6 +26,12 @@ public class Zettelkasten implements Iterable<Medium> {
         this.sorted = SortedState.NONE;
     }
 
+    /**
+     * removes a medium by it's title
+     * @param title title of the medium
+     * @throws DuplicateEntryException when multiple entries were found
+     * @throws EntryNotFoundException when no entry was found
+     */
     public void dropMedium(String title) throws DuplicateEntryException, EntryNotFoundException {
         ArrayList<Medium> results = new ArrayList<>();
 
@@ -41,6 +52,12 @@ public class Zettelkasten implements Iterable<Medium> {
         }
     }
 
+    /**
+     * removes a medium by it's title, and index for the case there are multiple entries
+     * @param title the title of the medium to remove
+     * @param index the index within the results list
+     * @throws EntryNotFoundException when there is no result at all or the index doesn't exists within results
+     */
     public void dropMedium(String title, int index) throws EntryNotFoundException {
         if (index < 0) {
             throw new IllegalArgumentException("index can't be lower than 0");
@@ -55,6 +72,11 @@ public class Zettelkasten implements Iterable<Medium> {
         throw new EntryNotFoundException();
     }
 
+    /**
+     * returns a medium by title
+     * @param title title of the medium
+     * @return an ArrayList of results (could be empty)
+     */
     public ArrayList<Medium> findMedium(String title) {
         ArrayList<Medium> results = new ArrayList<>();
 

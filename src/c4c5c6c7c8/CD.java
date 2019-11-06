@@ -63,6 +63,10 @@ public class CD extends Medium {
         return stringBuilder.toString();
     }
 
+    /**
+     * validate if all fields are valid
+     * @throws ValidationException thrown when at least one field isn't valid
+     */
     @Override
     public void validate() throws ValidationException {
         // validate fields inherited from superclass

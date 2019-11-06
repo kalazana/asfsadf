@@ -25,6 +25,10 @@ public abstract class Medium implements Comparable<Medium> {
      */
     public abstract String calculateRepresentation();
 
+    /**
+     * validate if all fields are valid
+     * @throws ValidationException thrown when at least one field isn't valid
+     */
     public void validate() throws ValidationException {
         // validate field titel
         if (this.titel == null || this.titel.trim().equals("")) {
