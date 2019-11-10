@@ -3,6 +3,9 @@ package c2c3;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class Family implements Iterable<String> {
     private ArrayList<String> members = new ArrayList<>();
 

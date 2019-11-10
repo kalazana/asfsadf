@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class A2Main {
     public static void main(String[] args) throws IOException {
         BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));

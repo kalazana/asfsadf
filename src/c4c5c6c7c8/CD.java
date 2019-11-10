@@ -2,6 +2,9 @@ package c4c5c6c7c8;
 
 import java.util.Formatter;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class CD extends Medium {
     private String label;
     private String kuenstler;

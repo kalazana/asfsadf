@@ -2,6 +2,9 @@ package c4c5c6c7c8;
 
 import java.io.Serializable;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public abstract class Medium implements Comparable<Medium>, Serializable {
     private String titel;
 

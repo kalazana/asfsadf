@@ -1,5 +1,8 @@
 package a6a7a8a9a10;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class A6A7A8A9A10Main {
     public static void main(String[] args) {
         // A6

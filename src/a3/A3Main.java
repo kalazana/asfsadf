@@ -1,5 +1,8 @@
 package a3;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class A3Main {
     public static void main(String[] args) {
         /*

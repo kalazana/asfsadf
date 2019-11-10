@@ -2,6 +2,9 @@ package c4c5c6c7c8;
 
 import java.util.Formatter;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class Zeitschrift extends Medium {
     private String issn;
     private Integer volume;

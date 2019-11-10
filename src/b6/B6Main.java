@@ -2,6 +2,9 @@ package b6;
 
 import java.io.*;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class B6Main {
     public static void main(String[] args) {
         // String lineSeparator = System.getProperty("line.separator");

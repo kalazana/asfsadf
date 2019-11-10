@@ -1,5 +1,8 @@
 package c2c3;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class C2C3Main {
     public static void main(String[] args) {
         // create family having 2 children

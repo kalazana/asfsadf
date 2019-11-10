@@ -3,6 +3,9 @@ package c4c5c6c7c8;
 import java.net.URL;
 import java.util.Formatter;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class ElektronischesMedium extends Medium {
     private String url;
 

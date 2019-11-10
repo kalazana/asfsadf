@@ -2,6 +2,9 @@ package c4c5c6c7c8;
 
 import java.io.IOException;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public interface Persistency {
     /**
      * @param zk a Zettelkasten instance

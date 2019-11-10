@@ -3,6 +3,9 @@ package c1;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class C1Main {
     private static ArrayList<Person> persons = new ArrayList<>();
 

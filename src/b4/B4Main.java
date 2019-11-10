@@ -2,6 +2,9 @@ package b4;
 
 import java.io.*;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class B4Main {
     public static void main(String[] args) throws IOException {
         System.out.println("Bitte einen Dateinamen/-pfad eingeben:");

@@ -1,5 +1,8 @@
 package b2;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class B2Main {
     public static class TestObject1 {
         private int testInt = 0;

@@ -2,6 +2,9 @@ package a6a7a8a9a10;
 
 import java.util.Formatter;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public abstract class Fahrzeug {
     private int baujahr;
 

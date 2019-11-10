@@ -2,6 +2,9 @@ package b8;
 
 import java.io.*;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class B8Main {
     public static void main(String[] args) {
         // String filename = "src/b8/test_utf8.txt";

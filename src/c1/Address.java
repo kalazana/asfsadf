@@ -2,6 +2,9 @@ package c1;
 
 import java.io.Serializable;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class Address implements Serializable {
     private String city;
     private String street;

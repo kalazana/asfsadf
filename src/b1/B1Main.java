@@ -1,5 +1,8 @@
 package b1;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class B1Main {
     /**
      * Describes how VAT will be calculated

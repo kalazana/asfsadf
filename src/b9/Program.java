@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * @author Jasper Roloff
+ * @author Jasper Roloff, Matrikelnummer 18837
  *
  * This program determines how a stock price changed from the beginning to the end of a year.
  * The data is read from a csv file, which has to meet the following requirements:

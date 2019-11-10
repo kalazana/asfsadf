@@ -2,6 +2,9 @@ package c4c5c6c7c8;
 
 import java.io.*;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class HumanReadablePersistency implements Persistency {
     /**
      * @see Persistency
