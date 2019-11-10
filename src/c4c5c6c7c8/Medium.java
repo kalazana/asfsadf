@@ -1,6 +1,8 @@
 package c4c5c6c7c8;
 
-public abstract class Medium implements Comparable<Medium> {
+import java.io.Serializable;
+
+public abstract class Medium implements Comparable<Medium>, Serializable {
     private String titel;
 
     /**
