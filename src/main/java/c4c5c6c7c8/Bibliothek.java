@@ -38,5 +38,21 @@ public class Bibliothek {
         for (Medium medium : zettelkasten) {
             System.out.println(medium.calculateRepresentation());
         }
+
+        try {
+            new DatabasePersistency("localhost", "lpsw").save(zettelkasten, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            System.out.println("loading:");
+            Zettelkasten zkNew = new DatabasePersistency("localhost", "lpsw").load(null);
+            for (Medium medium : zkNew) {
+                System.out.println(medium.calculateRepresentation());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
