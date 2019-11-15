@@ -12,7 +12,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
- * Copied from http://blog.mynotiz.de/programmieren/java-sax-parser-tutorial-773/
+ * Originally copied from http://blog.mynotiz.de/programmieren/java-sax-parser-tutorial-773/
  */
 public class D1Main {
     public static void main(String[] args) {
@@ -32,11 +32,7 @@ public class D1Main {
 
             // Parsen wird gestartet
             xmlReader.parse(inputSource);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
+        } catch (IOException | SAXException e) {
             e.printStackTrace();
         }
     }

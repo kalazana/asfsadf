@@ -13,7 +13,7 @@ import org.xml.sax.SAXException;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
- * Copied from http://blog.mynotiz.de/programmieren/java-sax-parser-tutorial-773/
+ * Originally copied from http://blog.mynotiz.de/programmieren/java-sax-parser-tutorial-773/
  */
 public class PersonenContentHandler implements ContentHandler {
     private ArrayList<Person> allePersonen = new ArrayList<Person>();

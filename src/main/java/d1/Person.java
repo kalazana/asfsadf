@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
- * Copied from http://blog.mynotiz.de/programmieren/java-sax-parser-tutorial-773/
+ * Originally copied from http://blog.mynotiz.de/programmieren/java-sax-parser-tutorial-773/
  */
 public class Person {
 
