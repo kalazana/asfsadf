@@ -1,13 +1,13 @@
 package d1;
 
+import org.xml.sax.Attributes;
+import org.xml.sax.ContentHandler;
+import org.xml.sax.Locator;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
@@ -68,6 +68,21 @@ public class PersonenContentHandler implements ContentHandler {
         // Ort setzen
         if (localName.equals("ort")) {
             person.setOrt(currentValue);
+        }
+
+        // Hobby setzen
+        if (localName.equals("hobby")) {
+            person.setHobby(currentValue);
+        }
+
+        // Lieblingsgericht setzen
+        if (localName.equals("lieblingsgericht")) {
+            person.setLieblingsgericht(currentValue);
+        }
+
+        // Lieblingsband setzen
+        if (localName.equals("lieblingsband")) {
+            person.setLieblingsband(currentValue);
         }
 
         // Person in Personenliste abspeichern falls Person End-Tag erreicht

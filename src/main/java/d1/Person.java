@@ -7,16 +7,17 @@ import java.util.Date;
  * Originally copied from http://blog.mynotiz.de/programmieren/java-sax-parser-tutorial-773/
  */
 public class Person {
-
     private int id;
     private String name;
     private String vorname;
     private Date geburtsdatum;
     private String postleitzahl;
     private String ort;
+    private String hobby;
+    private String lieblingsband;
+    private String lieblingsgericht;
 
     public Person() {
-
     }
 
     public int getId() {
@@ -67,9 +68,33 @@ public class Person {
         this.ort = ort;
     }
 
+    public String getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
+    }
+
+    public String getLieblingsband() {
+        return lieblingsband;
+    }
+
+    public void setLieblingsband(String lieblingsband) {
+        this.lieblingsband = lieblingsband;
+    }
+
+    public String getLieblingsgericht() {
+        return lieblingsgericht;
+    }
+
+    public void setLieblingsgericht(String lieblingsgericht) {
+        this.lieblingsgericht = lieblingsgericht;
+    }
+
     @Override
     public String toString() {
         return "[[" + this.id + "] [" + this.name + "] [" + this.vorname + "]" + " [" + this.ort
-                + "] [" + this.postleitzahl + "] [" + this.geburtsdatum + " ]]";
+                + "] [" + this.postleitzahl + "] [" + this.geburtsdatum + "] [" + this.hobby + "] [" + this.lieblingsband + "] [" + this.lieblingsgericht + "]]";
     }
 }

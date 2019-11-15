@@ -1,12 +1,12 @@
 package d1;
 
-import java.io.FileReader;
-import java.io.IOException;
-
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
+
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
@@ -23,7 +23,7 @@ public class D1Main {
             InputSource inputSource = new InputSource(reader);
 
             // DTD kann optional übergeben werden
-            // inputSource.setSystemId("X:\\personen.dtd");
+            // inputSource.setSystemId("personen.dtd");
 
             // PersonenContentHandler wird übergeben
             xmlReader.setContentHandler(new PersonenContentHandler());

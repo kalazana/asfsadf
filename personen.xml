@@ -6,6 +6,9 @@
         <geburtsdatum>25.11.1983</geburtsdatum>
         <postleitzahl>54321</postleitzahl>
         <ort>Bierdorf</ort>
+        <hobby>Kochen</hobby>
+        <lieblingsgericht>Lasagne</lieblingsgericht>
+        <lieblingsband>Linkin Park</lieblingsband>
     </person>
     <person id="2">
         <name>Müller</name>
@@ -13,5 +16,8 @@
         <geburtsdatum>13.04.1990</geburtsdatum>
         <postleitzahl>76543</postleitzahl>
         <ort>Bierdorf</ort>
+        <hobby>Segeln</hobby>
+        <lieblingsgericht>Pizza</lieblingsgericht>
+        <lieblingsband>Seeed</lieblingsband>
     </person>
 </personen>
