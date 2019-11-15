@@ -69,7 +69,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "[[" + this.id + "] ["+ this.name + "] [" + this.vorname + "]" + " [" + this.ort
+        return "[[" + this.id + "] [" + this.name + "] [" + this.vorname + "]" + " [" + this.ort
                 + "] [" + this.postleitzahl + "] [" + this.geburtsdatum + " ]]";
     }
 }
