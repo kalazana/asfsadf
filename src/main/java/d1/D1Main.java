@@ -21,7 +21,7 @@ public class D1Main {
             XMLReader xmlReader = XMLReaderFactory.createXMLReader();
 
             // Pfad zur XML Datei
-            FileReader reader = new FileReader("X:\\personen.xml");
+            FileReader reader = new FileReader("personen.xml");
             InputSource inputSource = new InputSource(reader);
 
             // DTD kann optional übergeben werden
