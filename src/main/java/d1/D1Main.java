@@ -31,13 +31,20 @@ public class D1Main {
             // inputSource.setSystemId("personen.dtd");
 
             // PersonenContentHandler wird übergeben
-            xmlReader.setContentHandler(new PersonenContentHandler());
+            PersonenContentHandler personenContentHandler = new PersonenContentHandler();
+            xmlReader.setContentHandler(personenContentHandler);
 
             // Parsen wird gestartet
             xmlReader.parse(inputSource);
 
+            // Person einlesen und zur ArrayList hinzufügen
             Person neuePerson = inputPerson();
+            personenContentHandler.getAllePersonen().add(neuePerson);
+            neuePerson.setId(personenContentHandler.getAllePersonen().size());
             System.out.println(neuePerson);
+
+
+            // TODO: write/output XML
         } catch (IOException | SAXException | ParseException e) {
             e.printStackTrace();
         }
@@ -46,7 +53,6 @@ public class D1Main {
     private static Person inputPerson() throws IOException, ParseException {
         System.out.println("Eingabe einer Person ...");
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-
         Person person = new Person();
 
         System.out.print("Bitte Vornamen eingeben: ");

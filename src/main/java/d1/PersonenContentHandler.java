@@ -116,4 +116,8 @@ public class PersonenContentHandler implements ContentHandler {
 
     public void startPrefixMapping(String prefix, String uri) {
     }
+
+    public ArrayList<Person> getAllePersonen() {
+        return allePersonen;
+    }
 }
