@@ -1,9 +1,16 @@
-package c4c5c6c7c8;
+package d5;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
  */
 public class Bibliothek {
+    /**
+     * Main method
+     * -> Main method for exercise D5 is in class WikipediaBooksContributorRequest
+     *
+     * @param args _
+     * @throws Medium.ValidationException _
+     */
     public static void main(String[] args) throws Medium.ValidationException {
         Zettelkasten zettelkasten = new Zettelkasten();
 

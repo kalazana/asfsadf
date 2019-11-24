@@ -1,6 +1,9 @@
-package c4c5c6c7c8;
+package d5;
 
-import java.io.*;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
