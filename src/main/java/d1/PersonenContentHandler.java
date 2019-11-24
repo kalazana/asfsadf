@@ -120,4 +120,52 @@ public class PersonenContentHandler implements ContentHandler {
     public ArrayList<Person> getAllePersonen() {
         return allePersonen;
     }
+
+    public void print() {
+        System.out.println("<?xml version=\"1.0\"?>");
+        System.out.println("<personen>");
+
+        for (Person person : allePersonen) {
+            // start person element
+            System.out.printf("\t<person id=\"%d\">", person.getId());
+            System.out.println();
+
+            // name
+            System.out.printf("\t\t<name>%s</name>", person.getName());
+            System.out.println();
+
+            // vorname
+            System.out.printf("\t\t<vorname>%s</vorname>", person.getVorname());
+            System.out.println();
+
+            // geburtsdatum
+            System.out.printf("\t\t<geburtsdatum>%td.%<tm.%<tY</geburtsdatum>", person.getGeburtsdatum());
+            System.out.println();
+
+            // postleitzahl
+            System.out.printf("\t\t<postleitzahl>%s</postleitzahl>", person.getPostleitzahl());
+            System.out.println();
+
+            // ort
+            System.out.printf("\t\t<ort>%s</ort>", person.getOrt());
+            System.out.println();
+
+            // hobby
+            System.out.printf("\t\t<hobby>%s</hobby>", person.getHobby());
+            System.out.println();
+
+            // lieblingsgericht
+            System.out.printf("\t\t<lieblingsgericht>%s</lieblingsgericht>", person.getLieblingsgericht());
+            System.out.println();
+
+            // lieblingsband
+            System.out.printf("\t\t<lieblingsband>%s</lieblingsband>", person.getLieblingsband());
+            System.out.println();
+
+            // end person element
+            System.out.println("\t</person>");
+        }
+
+        System.out.println("</personen>");
+    }
 }

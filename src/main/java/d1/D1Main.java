@@ -43,8 +43,8 @@ public class D1Main {
             neuePerson.setId(personenContentHandler.getAllePersonen().size());
             System.out.println(neuePerson);
 
-
-            // TODO: write/output XML
+            // write/output XML
+            personenContentHandler.print();
         } catch (IOException | SAXException | ParseException e) {
             e.printStackTrace();
         }
