@@ -23,13 +23,13 @@ public class MediaWikiPageContributor {
     @Override
     public String toString() {
         if (username != null && ip != null) {
-            return username + " (" + ip + ")";
+            return username + " via " + ip;
         } else if (username != null) {
             return username;
         } else if (ip != null) {
-            return ip;
+            return ip + " (IP)";
         } else {
-            return "UNKNOWN";
+            return "?";
         }
     }
 }
