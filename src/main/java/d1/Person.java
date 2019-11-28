@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
- * Originally copied from http://blog.mynotiz.de/programmieren/java-sax-parser-tutorial-773/
+ * Copied from http://blog.mynotiz.de/programmieren/java-sax-parser-tutorial-773/
  */
 public class Person {
     private int id;
@@ -16,9 +16,6 @@ public class Person {
     private String hobby;
     private String lieblingsband;
     private String lieblingsgericht;
-
-    public Person() {
-    }
 
     public int getId() {
         return id;

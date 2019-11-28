@@ -38,7 +38,6 @@ public class PersonenContentHandler implements ContentHandler {
 
     // Methode wird aufgerufen wenn der Parser zu einem End-Tag kommt
     public void endElement(String uri, String localName, String qName) {
-
         // Name setzen
         if (localName.equals("name")) {
             person.setName(currentValue);

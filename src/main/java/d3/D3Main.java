@@ -10,6 +10,9 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class D3Main {
     public static void main(String[] args) {
         try {
@@ -25,6 +28,5 @@ public class D3Main {
         } catch (SAXException | IOException e) {
             e.printStackTrace();
         }
-
     }
 }

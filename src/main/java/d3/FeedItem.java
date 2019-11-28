@@ -2,6 +2,9 @@ package d3;
 
 import java.util.Date;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class FeedItem {
     private String title;
     private String description;
