@@ -18,13 +18,22 @@ public class PersonenContentHandler implements ContentHandler {
     private String currentValue;
     private Person person;
 
-    // Aktuelle Zeichen die gelesen werden, werden in eine Zwischenvariable
-    // gespeichert
+    /**
+     * Aktuelle Zeichen die gelesen werden, werden in eine Zwischenvariable gespeichert
+     *
+     * @param ch     ch
+     * @param length length
+     * @param start  start
+     * @see ContentHandler
+     */
     public void characters(char[] ch, int start, int length) {
         currentValue = new String(ch, start, length);
     }
 
-    // Methode wird aufgerufen wenn der Parser zu einem Start-Tag kommt
+    /**
+     * Methode wird aufgerufen wenn der Parser zu einem Start-Tag kommt
+     * @see ContentHandler
+     */
     public void startElement(String uri, String localName, String qName, Attributes atts) {
         if (localName.equals("person")) {
             // Neue Person erzeugen
@@ -36,7 +45,13 @@ public class PersonenContentHandler implements ContentHandler {
         }
     }
 
-    // Methode wird aufgerufen wenn der Parser zu einem End-Tag kommt
+    /**
+     * Methode wird aufgerufen wenn der Parser zu einem End-Tag kommt
+     * @param uri uri
+     * @param localName localName
+     * @param qName qName
+     * @see ContentHandler
+     */
     public void endElement(String uri, String localName, String qName) {
         // Name setzen
         if (localName.equals("name")) {
@@ -116,10 +131,17 @@ public class PersonenContentHandler implements ContentHandler {
     public void startPrefixMapping(String prefix, String uri) {
     }
 
+    /**
+     * returns a list of all parsed person items
+     * @return list of person items
+     */
     public ArrayList<Person> getAllePersonen() {
         return allePersonen;
     }
 
+    /**
+     * prints the current list as xml to console
+     */
     public void print() {
         System.out.println("<?xml version=\"1.0\"?>");
         System.out.println("<personen>");

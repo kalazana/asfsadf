@@ -17,17 +17,40 @@ public class FeedContentHandler implements ContentHandler {
     private String currentValue;
     private FeedItem item = null;
 
+    /**
+     * Aktuelle Zeichen die gelesen werden, werden in eine Zwischenvariable gespeichert
+     *
+     * @param ch     ch
+     * @param start  start
+     * @param length lenght
+     * @see ContentHandler
+     */
     public void characters(char[] ch, int start, int length) {
         currentValue = new String(ch, start, length);
     }
 
+    /**
+     * Methode wird aufgerufen wenn der Parser zu einem Start-Tag kommt
+     * @param uri uri
+     * @param localName localName
+     * @param qName qName
+     * @param atts atts
+     * @see ContentHandler
+     */
     public void startElement(String uri, String localName, String qName, Attributes atts) {
         if (localName.equals("item")) {
             item = new FeedItem();
         }
     }
 
+    /**
+     * Methode wird aufgerufen wenn der Parser zu einem End-Tag kommt
+     * @param uri uri
+     * @param localName localName
+     * @param qName qName
+     */
     public void endElement(String uri, String localName, String qName) {
+        // ensure we are inside an item before we process item-specific tags
         if (item != null) {
             if (localName.equals("title")) {
                 item.setTitle(currentValue);
