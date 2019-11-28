@@ -2,6 +2,9 @@ package d4;
 
 import java.util.ArrayList;
 
+/**
+ * @author jasperroloff
+ */
 public class D4Main {
     // 1. example from exercise (should work)
     private static final String example1 = "<team><person><vorname>Norrin</vorname> <nachname>Radd</nachname><alias>Silver Surfer</alias></person><person><vorname>Ben</vorname><nachname>Grimm</nachname><alias>Das Ding</alias></person></team>";
