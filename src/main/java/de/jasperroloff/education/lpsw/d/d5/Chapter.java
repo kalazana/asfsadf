@@ -4,6 +4,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 @XmlRootElement
 public class Chapter implements Iterable<Chapter> {
     private String title;

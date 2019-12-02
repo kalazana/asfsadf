@@ -70,6 +70,7 @@ public class MediaWikiPageInfoContentHandler implements ContentHandler {
                     }
                     break;
                 case "text":
+                    // read regal info
                     Pattern regalPattern = Pattern.compile("(?<=\\{\\{Regal\\|)\\w+(?=}})");
                     Matcher regalMatcher = regalPattern.matcher(content);
                     if (regalMatcher.find()) {
@@ -77,18 +78,22 @@ public class MediaWikiPageInfoContentHandler implements ContentHandler {
                         page.setRegal(regal);
                     }
 
+                    // search for "__TOC__" and use this as beginning to parse TOC
                     String toc = content.substring(content.indexOf("__TOC__"));
 
                     // regex101.com is a big help here: https://regex101.com/r/NYPNcI/1
                     Pattern chapterPattern = Pattern.compile("((?<=== )\\w*(?= ===))|((?<==== \\[\\[).*\\|\\w+(\\s\\w+)*(?=]] ===))");
                     Matcher chapterMatcher = chapterPattern.matcher(toc);
 
+                    // read until no more chapters are found
                     while (chapterMatcher.find()) {
+                        // sometimes the title is a link, then we have to get the link title and not the complete link tag
                         String title = chapterMatcher.group();
                         if (chapterMatcher.group(1) == null) {
                             title = title.split("\\|")[1];
                         }
 
+                        // add the chapter to our revision
                         Chapter chapter = new Chapter(title);
                         revision.addChapter(chapter);
                     }

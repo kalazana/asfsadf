@@ -5,7 +5,6 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.io.IOException;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
@@ -29,8 +28,7 @@ public class XMLPersistency implements Persistency {
     /**
      * @param filename from which file to load
      * @return a Zettelkasten instance
-     * @throws IOException            e.g. file not found
-     * @throws ClassNotFoundException in case of parsing error
+     * @throws JAXBException exception while parsing xml or reading from file
      * @see Persistency
      */
     @Override
