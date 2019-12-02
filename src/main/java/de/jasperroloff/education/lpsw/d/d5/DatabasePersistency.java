@@ -26,6 +26,8 @@ public class DatabasePersistency implements Persistency {
 
     /**
      * constructor; used here for initiating a connection to the database server
+     * @param dbName name of the database
+     * @param host hostname of database server
      */
     public DatabasePersistency(String host, String dbName) {
         CodecRegistry pojoCodecRegistry = fromRegistries(MongoClient.getDefaultCodecRegistry(), fromProviders(PojoCodecProvider.builder().automatic(true).build()));

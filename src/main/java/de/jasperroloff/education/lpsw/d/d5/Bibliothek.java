@@ -6,7 +6,7 @@ package de.jasperroloff.education.lpsw.d.d5;
 public class Bibliothek {
     /**
      * Main method
-     * -> Main method for exercise D5 is in class WikipediaBooksContributorRequest
+     * - Main method for exercise D5 is in class WikipediaBooksContributorRequest
      *
      * @param args _
      * @throws Medium.ValidationException _
