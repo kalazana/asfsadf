@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zettelkasten>
+    <medien>
+        <cd>
+            <titel>1</titel>
+            <kuenstler>The Beatles</kuenstler>
+            <label>Apple (Bea (EMI)</label>
+        </cd>
+        <zeitschrift>
+            <titel>Der Spiegel</titel>
+            <issn>0038-7452</issn>
+            <nummer>6</nummer>
+            <volume>54</volume>
+        </zeitschrift>
+        <buch>
+            <titel>Duden 01. Die deutsche Rechtschreibung</titel>
+            <erscheinungsjahr>2004</erscheinungsjahr>
+            <isbn>3-411-04013-0</isbn>
+            <verfasser>-</verfasser>
+            <verlag>Bibliographisches Institut, Mannheim</verlag>
+        </buch>
+        <elektronischesMedium>
+            <titel>Hochschule Stralsund</titel>
+            <url>http://www.hochschule-stralsund.de</url>
+        </elektronischesMedium>
+    </medien>
+</zettelkasten>

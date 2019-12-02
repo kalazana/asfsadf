@@ -1,5 +1,11 @@
 package de.jasperroloff.education.lpsw.d.d5;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
+@XmlRootElement
 public class MediaWikiPageContributor {
     private String username;
     private String ip;

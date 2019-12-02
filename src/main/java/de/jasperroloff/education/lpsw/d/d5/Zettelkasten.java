@@ -1,5 +1,9 @@
 package de.jasperroloff.education.lpsw.d.d5;
 
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -10,14 +14,26 @@ import java.util.Iterator;
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
  */
+@XmlRootElement
 public class Zettelkasten implements Iterable<Medium>, Serializable {
     private SortedState sorted = SortedState.NONE;
+
+    @XmlElementWrapper(name = "medien")
+    @XmlElementRefs({
+            @XmlElementRef(type = Medium.class),
+            @XmlElementRef(type = Buch.class),
+            @XmlElementRef(type = CD.class),
+            @XmlElementRef(type = Zeitschrift.class),
+            @XmlElementRef(type = ElektronischesMedium.class),
+            @XmlElementRef(type = MediaWikiPage.class),
+    })
     private ArrayList<Medium> mediumArrayList = new ArrayList<>();
 
     /**
      * add's a medium instance
+     *
      * @param medium the Medium instance to add
-     * @throws Medium.ValidationException
+     * @throws Medium.ValidationException when attributes are invalid or not set
      */
     public void addMedium(Medium medium) throws Medium.ValidationException {
         // check if all fields are valid
@@ -32,9 +48,10 @@ public class Zettelkasten implements Iterable<Medium>, Serializable {
 
     /**
      * removes a medium by it's title
+     *
      * @param title title of the medium
      * @throws DuplicateEntryException when multiple entries were found
-     * @throws EntryNotFoundException when no entry was found
+     * @throws EntryNotFoundException  when no entry was found
      */
     public void dropMedium(String title) throws DuplicateEntryException, EntryNotFoundException {
         ArrayList<Medium> results = new ArrayList<>();
@@ -58,6 +75,7 @@ public class Zettelkasten implements Iterable<Medium>, Serializable {
 
     /**
      * removes a medium by it's title, and index for the case there are multiple entries
+     *
      * @param title the title of the medium to remove
      * @param index the index within the results list
      * @throws EntryNotFoundException when there is no result at all or the index doesn't exists within results
@@ -78,6 +96,7 @@ public class Zettelkasten implements Iterable<Medium>, Serializable {
 
     /**
      * returns a medium by title
+     *
      * @param title title of the medium
      * @return an ArrayList of results (could be empty)
      */
@@ -101,6 +120,7 @@ public class Zettelkasten implements Iterable<Medium>, Serializable {
 
     /**
      * sorts the internal ArrayList by media title from a-z
+     *
      * @param reversed if true, sorting will be done from z-a instead a-z
      */
     public void sort(boolean reversed) {
@@ -114,7 +134,6 @@ public class Zettelkasten implements Iterable<Medium>, Serializable {
             this.sorted = SortedState.DESC;
         }
     }
-
 
     /**
      * sorts the internal ArrayList by media title from a-z

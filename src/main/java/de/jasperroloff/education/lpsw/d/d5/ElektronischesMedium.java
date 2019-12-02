@@ -1,11 +1,13 @@
 package de.jasperroloff.education.lpsw.d.d5;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.net.URL;
 import java.util.Formatter;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
  */
+@XmlRootElement
 public class ElektronischesMedium extends Medium {
     private String url;
 

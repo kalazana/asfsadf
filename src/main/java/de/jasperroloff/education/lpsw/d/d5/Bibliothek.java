@@ -46,6 +46,24 @@ public class Bibliothek {
             System.out.println(medium.calculateRepresentation());
         }
 
+
+        try {
+            System.out.println("Saving to xml ...");
+            new XMLPersistency().save(zettelkasten, "example-files/zettelkasten.xml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            System.out.println("Loading from xml ...");
+            for (Medium medium : new XMLPersistency().load("example-files/zettelkasten.xml")) {
+                System.out.println(medium.calculateRepresentation());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        /*
         try {
             new DatabasePersistency("localhost", "lpsw").save(zettelkasten, null);
         } catch (Exception e) {
@@ -60,6 +78,6 @@ public class Bibliothek {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }

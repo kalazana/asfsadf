@@ -1,10 +1,12 @@
 package de.jasperroloff.education.lpsw.d.d5;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Formatter;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
  */
+@XmlRootElement
 public class CD extends Medium {
     private String label;
     private String kuenstler;

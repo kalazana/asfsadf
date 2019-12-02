@@ -7,19 +7,22 @@ import org.xml.sax.Locator;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
  * Originally copied from http://blog.mynotiz.de/programmieren/java-sax-parser-tutorial-773/
  */
 public class MediaWikiPageInfoContentHandler implements ContentHandler {
-    private String currentValue;
+    private StringBuilder currentText = new StringBuilder();
     private MediaWikiPage page = null;
     private MediaWikiPageRevision revision = null;
     private MediaWikiPageContributor contributor = null;
 
+    @Override
     public void characters(char[] ch, int start, int length) {
-        currentValue = new String(ch, start, length);
+        currentText.append(ch, start, length);
     }
 
     public void startElement(String uri, String localName, String qName, Attributes atts) {
@@ -37,13 +40,16 @@ public class MediaWikiPageInfoContentHandler implements ContentHandler {
     }
 
     public void endElement(String uri, String localName, String qName) {
+        final String content = currentText.toString().trim();
+        currentText.setLength(0);
+
         if (contributor != null) {
             switch (localName) {
                 case "ip":
-                    contributor.setIp(currentValue);
+                    contributor.setIp(content);
                     break;
                 case "username":
-                    contributor.setUsername(currentValue);
+                    contributor.setUsername(content);
                     break;
                 case "contributor":
                     revision.setContributor(contributor);
@@ -57,10 +63,34 @@ public class MediaWikiPageInfoContentHandler implements ContentHandler {
                     SimpleDateFormat datumsformat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX");
 
                     try {
-                        Date date = datumsformat.parse(currentValue);
+                        Date date = datumsformat.parse(content);
                         revision.setTimestamp(date);
                     } catch (ParseException e) {
                         e.printStackTrace();
+                    }
+                    break;
+                case "text":
+                    Pattern regalPattern = Pattern.compile("(?<=\\{\\{Regal\\|)\\w+(?=}})");
+                    Matcher regalMatcher = regalPattern.matcher(content);
+                    if (regalMatcher.find()) {
+                        String regal = regalMatcher.group();
+                        page.setRegal(regal);
+                    }
+
+                    String toc = content.substring(content.indexOf("__TOC__"));
+
+                    // regex101.com is a big help here: https://regex101.com/r/NYPNcI/1
+                    Pattern chapterPattern = Pattern.compile("((?<=== )\\w*(?= ===))|((?<==== \\[\\[).*\\|\\w+(\\s\\w+)*(?=]] ===))");
+                    Matcher chapterMatcher = chapterPattern.matcher(toc);
+
+                    while (chapterMatcher.find()) {
+                        String title = chapterMatcher.group();
+                        if (chapterMatcher.group(1) == null) {
+                            title = title.split("\\|")[1];
+                        }
+
+                        Chapter chapter = new Chapter(title);
+                        revision.addChapter(chapter);
                     }
                     break;
                 case "revision":
@@ -71,7 +101,7 @@ public class MediaWikiPageInfoContentHandler implements ContentHandler {
         } else if (page != null) {
             switch (localName) {
                 case "title":
-                    page.setTitel(currentValue);
+                    page.setTitel(content);
                     break;
                 // TODO: more attributes
             }

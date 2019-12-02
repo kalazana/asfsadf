@@ -18,6 +18,9 @@ import java.net.URLConnection;
 // -> Konsolenausgabe bereits umgerechnet. Unterschied zur Zeit im Browser, weil die Zeit im Browser nicht korrekt ist
 // -> am 22. September war noch Sommerzeit, daher sollte auch die Zeitzone CEST (+0200) zum Einsatz kommen
 
+/**
+ * @author Jasper Roloff, Matrikelnummer 18837
+ */
 public class WikipediaBooksContributorRequest {
     public static void main(String[] args) throws Exception {
         if (args.length < 1) {
@@ -28,7 +31,8 @@ public class WikipediaBooksContributorRequest {
         System.out.println("Suche nach: " + title);
 
         try {
-            System.out.println(readPageInfo(title).getLatestRevision());
+            MediaWikiPage page = readPageInfo(title);
+            System.out.println(page.getLatestRevision() + "Regal: " + page.getRegal());
         } catch (Exception e) {
             e.printStackTrace();
         }

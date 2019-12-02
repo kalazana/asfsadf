@@ -1,10 +1,12 @@
 package de.jasperroloff.education.lpsw.d.d5;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 /**
  * @author Jasper Roloff, Matrikelnummer 18837
  */
+@XmlRootElement
 public abstract class Medium implements Comparable<Medium>, Serializable {
     private String titel;
 
