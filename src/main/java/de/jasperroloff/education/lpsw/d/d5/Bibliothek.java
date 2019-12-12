@@ -1,6 +1,6 @@
 package de.jasperroloff.education.lpsw.d.d5;
 
-/**
+/**//test
  * @author Jasper Roloff, Matrikelnummer 18837
  */
 public class Bibliothek {
